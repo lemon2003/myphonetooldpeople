@@ -1,27 +1,218 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-    <title>家庭电话簿</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>家庭照片电话簿</title>
     <style>
-        /* 简单的样式，让按钮变大变清晰 */
-        body { font-family: sans-serif; text-align: center; }
-        .contact-button {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            overflow: hidden;
+        }
+
+        h1 {
+            text-align: center;
+            margin: 20px 0 30px;
+            font-size: 28px;
+            color: #2c3e50;
+            font-weight: 600;
+        }
+
+        .photo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            padding: 10px;
+        }
+
+        .contact-item {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+
+        .contact-item:active {
+            transform: translateY(0);
+        }
+
+        .photo-link {
             display: block;
-            width: 80%; height: 60px;
-            margin: 20px auto;
-            font-size: 24px;
-            background-color: #4CAF50; /* 绿色 */
-            color: white;
-            border: none; border-radius: 10px;
             text-decoration: none;
-            line-height: 60px; /* 垂直居中 */
+            color: inherit;
+        }
+
+        .contact-photo {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-bottom: 3px solid #4CAF50;
+        }
+
+        .contact-name {
+            text-align: center;
+            padding: 10px 5px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #2c3e50;
+            background-color: #f8f9fa;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 15px;
+            color: #7f8c8d;
+            font-size: 14px;
+            border-top: 1px solid #eaeaea;
+        }
+        img {
+                width: 100%;
+                height: 100%;
+                display: block;
+            }
+        @media (max-width: 600px) {
+            .photo-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-photo {
+                height: 200px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 10px;
+            }
+
+            h1 {
+                font-size: 24px;
+            }
+
+            .contact-photo {
+                height: 180px;
+            }
+
         }
     </style>
 </head>
 <body>
-    <h1>一键通话</h1>
-    <a class="contact-button" href="tel:15503719739">呼叫 儿子</a>
-    <a class="contact-button" href="tel:13900139000">呼叫 女儿</a>
-    <a class="contact-button" href="tel:120">紧急求助</a>
+    <div class="container">
+        <h1>家庭照片电话簿</h1>
+
+        <div class="photo-grid">
+            <!-- 联系人1 -->
+            <div class="contact-item">
+                <a href="tel:15617888906" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">蒙蒙</div>
+                </a>
+            </div>
+
+            <!-- 联系人2 -->
+            <div class="contact-item">
+                <a href="tel:13900139000" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">女儿</div>
+                </a>
+            </div>
+
+            <!-- 联系人3 -->
+            <div class="contact-item">
+                <a href="tel:120" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">紧急求助</div>
+                </a>
+            </div>
+
+            <!-- 联系人4 -->
+            <div class="contact-item">
+                <a href="tel:13800138000" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">妈妈</div>
+                </a>
+            </div>
+
+            <!-- 联系人5 -->
+            <div class="contact-item">
+                <a href="tel:13700137000" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">爸爸</div>
+                </a>
+            </div>
+
+            <!-- 联系人6 -->
+            <div class="contact-item">
+                <a href="tel:12345" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">社区服务</div>
+                </a>
+            </div>
+
+            <!-- 联系人7 -->
+            <div class="contact-item">
+                <a href="tel:10086" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">客服</div>
+                </a>
+            </div>
+
+            <!-- 联系人8 -->
+            <div class="contact-item">
+                <a href="tel:110" class="photo-link">
+                    <img src="1.jpg">
+                    <div class="contact-name">报警</div>
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>点击照片直接拨打电话</p>
+        </div>
+    </div>
+
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactItems = document.querySelectorAll('.contact-item');
+
+            contactItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    // 添加点击反馈
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
